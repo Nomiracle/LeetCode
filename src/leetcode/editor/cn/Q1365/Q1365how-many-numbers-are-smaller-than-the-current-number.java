@@ -1,4 +1,5 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.Q1365;
+
 //给你一个数组 nums，对于其中每个元素 nums[i]，请你统计数组中比它小的所有数字的数目。 
 //
 // 换而言之，对于每个 nums[i] 你必须计算出有效的 j 的数量，其中 j 满足 j != i 且 nums[j] < nums[i] 。 
@@ -40,10 +41,10 @@ package leetcode.editor.cn;
 // 0 <= nums[i] <= 100 
 // 
 // Related Topics 数组 哈希表 
-// 👍 88 👎 0
+// 👍 108 👎 0
 
 
-import java.util.*;
+import java.util.Arrays;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
@@ -79,36 +80,38 @@ class Solution {
         }
         return nums;
     }
+}
+//leetcode submit region end(Prohibit modification and deletion)
 
 
+class test{
+        public static void main(String[] args) {
+            int[] array = {8, 1, 2, 2, 3};
+            System.out.println("输入：nums = [8,1,2,2,3];输出：[4,0,1,1,3]:");
+            int[] nums = new Solution().smallerNumbersThanCurrent(array);
+            Arrays.stream(nums).forEach(num -> System.out.print(num + " "));
+            System.out.println();
 
-    public static void main(String[] args) {
-        int[] array = {8, 1, 2, 2, 3};
-        System.out.println("输入：nums = [8,1,2,2,3];输出：[4,0,1,1,3]:");
-        int[] nums = new Solution().smallerNumbersThanCurrent(array);
-        Arrays.stream(nums).forEach(num -> System.out.print(num + " "));
-        System.out.println();
 
+            array = new int[]{6, 5, 4, 8};
+            System.out.println("输入：nums = [6,5,4,8],输出：[2,1,0,3] :");
+            nums = new Solution().smallerNumbersThanCurrent(array);
+            Arrays.stream(nums).forEach(num -> System.out.print(num + " "));
+            System.out.println();
 
-        array = new int[]{6, 5, 4, 8};
-        System.out.println("输入：nums = [6,5,4,8],输出：[2,1,0,3] :");
-        nums = new Solution().smallerNumbersThanCurrent(array);
-        Arrays.stream(nums).forEach(num -> System.out.print(num + " "));
-        System.out.println();
+            array = new int[]{7, 7, 7, 7};
+            System.out.println("输入：nums = [7,7,7,7],输出：[0,0,0,0] :");
+            nums = new Solution().smallerNumbersThanCurrent(array);
+            Arrays.stream(nums).forEach(num -> System.out.print(num + " "));
+            System.out.println();
 
-        array = new int[]{7, 7, 7, 7};
-        System.out.println("输入：nums = [7,7,7,7],输出：[0,0,0,0] :");
-        nums = new Solution().smallerNumbersThanCurrent(array);
-        Arrays.stream(nums).forEach(num -> System.out.print(num + " "));
-        System.out.println();
-
-        array = new int[]{5,0,10,0,10,6};
-        System.out.println("输入：nums = [5,0,10,0,10,6],输出：[2,0,4,0,4,3] :");
-        nums = new Solution().smallerNumbersThanCurrent(array);
-        Arrays.stream(nums).forEach(num -> System.out.print(num + " "));
-        System.out.println();
-
+            array = new int[]{5,0,10,0,10,6};
+            System.out.println("输入：nums = [5,0,10,0,10,6],输出：[2,0,4,0,4,3] :");
+            nums = new Solution().smallerNumbersThanCurrent(array);
+            Arrays.stream(nums).forEach(num -> System.out.print(num + " "));
+            System.out.println();
 
     }
 }
-//leetcode submit region end(Prohibit modification and deletion)
+
+
