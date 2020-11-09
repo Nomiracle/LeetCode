@@ -88,7 +88,7 @@ class Solution {
 class test {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.strStr("00012", "1"));
+        System.out.println(solution.strStr("121", "121"));
 
     }
 }
