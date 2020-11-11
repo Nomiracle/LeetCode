@@ -47,8 +47,40 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 class Solution {
+//    public int sumNumbers(TreeNode root) {
+//        return sumNumbers(root, 0);
+//    }
+//
+//    public int sumNumbers(TreeNode root, int parentNum) {
+//        if (root == null) return 0;
+//        int currentSum = parentNum * 10 + root.val;
+//        if (root.left == null && root.right == null) return currentSum;
+//        return sumNumbers(root.left, currentSum) + sumNumbers(root.right, currentSum);
+//    }
+
     public int sumNumbers(TreeNode root) {
-        return 0;
+        if (root == null) return 0;
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        int sum = 0;
+        queue.add(root);
+        TreeNode tmp;
+        while (!queue.isEmpty()) {
+            tmp = queue.poll();
+            if (tmp.left == null && tmp.right == null) {
+                sum += tmp.val;
+            }
+            if (tmp.left != null) {
+                tmp.left.val += 10 * tmp.val;
+                queue.add(tmp.left);
+            }
+            if (tmp.right != null) {
+                tmp.right.val += 10 * tmp.val;
+                queue.add(tmp.right);
+            }
+
+        }
+        return sum;
+
     }
 
 
@@ -67,7 +99,7 @@ class TreeNode {
 
 class test {
     public static void main(String[] args) {
-        int[] array = {4, 9, 0, 5,1};
+        int[] array = {4, 9, 0, 5, 1};
         TreeNode root = buildTree(array, 0);
 
         printTree(root);
