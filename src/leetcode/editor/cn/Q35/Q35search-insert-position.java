@@ -37,9 +37,7 @@ class Solution {
 //        int lo=0,hi=nums.length,mid;
 //        while(lo<hi){
 //            mid = (lo+hi)>>1;
-//            if(target == nums[mid]){
-//                return mid;
-//            }else if(target > nums[mid]){
+//            if(target > nums[mid]){
 //                lo = mid+1 ;
 //            }else{
 //                hi = mid ;
@@ -57,8 +55,8 @@ class Solution {
     int searchInsert(int[] nums, int target, int low, int hi) {
         if (low >= hi) return low;
         int mid = (low + hi) >> 1;
-        if (target == nums[mid]) return mid;
-        else if (target > nums[mid]) return searchInsert(nums, target, mid + 1, hi);
+
+        if (target > nums[mid]) return searchInsert(nums, target, mid + 1, hi);
         else {
             return searchInsert(nums, target, low, mid);
         }
